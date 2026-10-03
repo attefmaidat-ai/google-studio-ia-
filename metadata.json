@@ -1,0 +1,6 @@
+{
+  "name": "ROKA ELECTRO",
+  "description": "Boutique d'électroménager moderne en Algérie. Vente, garantie 12 mois et livraison 58 wilayas. Commandes directes WhatsApp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

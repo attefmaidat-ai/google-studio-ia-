@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+    <path
+        android:fillColor="#F8FAFC"
+        android:pathData="M100,10 A90,90 0 1,0 100,190 A90,90 0 1,0 100,10 Z" />
+    <!-- Espresso Machine Main Body -->
+    <path
+        android:fillColor="#334155"
+        android:pathData="M65,40 L135,40 A8,8 0 0,1 143,48 L143,155 A8,8 0 0,1 135,163 L65,163 A8,8 0 0,1 57,155 L57,48 A8,8 0 0,1 65,40 Z" />
+    <!-- Top Chrome Accent -->
+    <path
+        android:fillColor="#CBD5E1"
+        android:pathData="M65,40 L135,40 L135,55 L65,55 Z" />
+    <!-- Pressure gauge -->
+    <path
+        android:fillColor="#F21878"
+        android:pathData="M100,42 A6,6 0 1,0 100,54 A6,6 0 1,0 100,42 Z" />
+    <!-- Dispenser Head -->
+    <path
+        android:fillColor="#64748B"
+        android:pathData="M80,85 L120,85 L115,100 L85,100 Z" />
+    <!-- Portafilter handle -->
+    <path
+        android:fillColor="#1E293B"
+        android:strokeColor="#103C91"
+        android:strokeWidth="2"
+        android:pathData="M115,92 L150,92 A4,4 0 0,1 154,96 L154,100 A4,4 0 0,1 150,104 L115,104 Z" />
+    <!-- Cup -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="2"
+        android:pathData="M88,125 L112,125 L108,145 L92,145 Z" />
+    <!-- Drip tray -->
+    <path
+        android:fillColor="#0F172A"
+        android:pathData="M65,150 L135,150 L135,160 L65,160 Z" />
+</vector>

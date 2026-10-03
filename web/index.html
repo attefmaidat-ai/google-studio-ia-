@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>ROKA ELECTRO — Boutique d'électroménager en Algérie</title>
+  <meta name="description" content="ROKA ELECTRO Algérie : Votre destination électroménager au meilleur prix ! Cuisinières, réfrigérateurs, robots et petits électroménagers. Livraison 58 Wilayas et garantie 12 mois. Commandes WhatsApp au 0791708328.">
+  <link rel="icon" type="image/jpeg" href="images/img_app_icon.jpg">
+  <meta name="theme-color" content="#F21878">
+  
+  <!-- Feuille de style principale -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Supabase CDN pour intégration directe de base de données -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+  <!-- 1. Barre Supérieure Rose Vif -->
+  <div class="top-bar">
+    <div class="top-bar-content">
+      <div class="top-bar-item"><span>🚚</span> <span>Livraison rapide (58 Wilayas)</span></div>
+      <span class="top-bar-dot">•</span>
+      <div class="top-bar-item"><span>🛡️</span> <span>Garantie 12 mois</span></div>
+      <span class="top-bar-dot">•</span>
+      <div class="top-bar-item"><span>🎧</span> <span>Service client 7j/7</span></div>
+    </div>
+  </div>
+
+  <!-- 2. Header Sticky -->
+  <header class="header-sticky">
+    <div class="container">
+      <div class="header-top">
+        <a href="#" class="logo-text">
+          <span class="logo-roka">ROKA</span> <span class="logo-electro">ELECTRO</span>
+        </a>
+        <div class="header-actions">
+          <button class="btn-wilayas" onclick="openWilayasModal()">
+            <span>🚚</span> <span>58 Wilayas</span>
+          </button>
+          <button class="btn-settings" onclick="openSupabaseModal()" title="Paramètres Supabase">
+            <span>⚙️ Supabase</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Barre de recherche -->
+      <div class="search-wrapper">
+        <span class="search-icon-left">🔍</span>
+        <input type="text" id="searchInput" class="search-input" placeholder="Rechercher un produit, marque..." autocomplete="off">
+        <button id="searchClearBtn" class="search-clear-btn" title="Effacer">×</button>
+      </div>
+
+      <!-- Menu d'accès rapide -->
+      <nav class="header-nav">
+        <a href="#produits" class="nav-pill nav-pill-products">Produits</a>
+        <a href="#contact" class="nav-pill nav-pill-contact">Contact</a>
+        <a id="navWhatsAppBtn" href="#" target="_blank" rel="noopener noreferrer" class="nav-pill nav-pill-whatsapp">💬 WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 3. Grande Section d'Accueil (Hero) -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-tag">
+        <span>⭐</span> <span>BOUTIQUE OFFICIELLE ALGÉRIE</span>
+      </div>
+      <div class="hero-welcome">BIENVENUE CHEZ</div>
+      <div class="hero-title-roka">ROKA</div>
+      <div class="hero-title-electro">ELECTRO</div>
+      <p class="hero-subtitle">Votre destination électroménager au meilleur prix !</p>
+      
+      <a href="#produits" class="hero-cta-btn">
+        <span>DÉCOUVRIR NOS PRODUITS</span>
+        <span>→</span>
+      </a>
+
+      <!-- Élément graphique mettant en valeur ROKA ELECTRO -->
+      <div class="hero-card">
+        <img src="images/img_hero_appliances.jpg" alt="Électroménager ROKA ELECTRO" loading="eager">
+        <div class="hero-card-banner">
+          <span>🔥 ARRIVAGES ÉLECTRO 2026</span>
+          <span style="color: #FFD700;">QUALITÉ GARANTIE</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Section Avantages (4 Blocs) -->
+  <section class="benefits-section">
+    <div class="container">
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon-box" style="background: #EFF5FF; color: #103C91;">🚚</div>
+          <div class="benefit-title">LIVRAISON RAPIDE</div>
+          <div class="benefit-subtitle">Dans toutes les wilayas</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon-box" style="background: #FFF0F6; color: #F21878;">🛡️</div>
+          <div class="benefit-title">GARANTIE 12 MOIS</div>
+          <div class="benefit-subtitle">Sur nos produits</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon-box" style="background: #F9F0FF; color: #7A228B;">🎧</div>
+          <div class="benefit-title">SERVICE CLIENT 7J/7</div>
+          <div class="benefit-subtitle">À votre écoute</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon-box" style="background: #E9F9EE; color: #25D366;">💬</div>
+          <div class="benefit-title">COMMANDE WHATSAPP</div>
+          <div class="benefit-subtitle">Réponse rapide</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Section Catégories -->
+  <section class="categories-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <h2 class="section-title">NOS <span>CATÉGORIES</span></h2>
+        <p class="section-desc">Découvrez notre gamme complète d'appareils de qualité</p>
+      </div>
+
+      <div class="categories-grid">
+        <div class="category-card" data-category="cuisinieres">
+          <div class="category-emoji">🍳</div>
+          <div>
+            <div class="category-name">Cuisinières</div>
+            <div class="category-sub">Fours & Feux Inox</div>
+          </div>
+        </div>
+        <div class="category-card" data-category="refrigerateurs">
+          <div class="category-emoji">🧊</div>
+          <div>
+            <div class="category-name">Réfrigérateurs</div>
+            <div class="category-sub">No Frost & Combi</div>
+          </div>
+        </div>
+        <div class="category-card" data-category="petit_electro">
+          <div class="category-emoji">☕</div>
+          <div>
+            <div class="category-name">Petit électro</div>
+            <div class="category-sub">Café, Friteuses, etc.</div>
+          </div>
+        </div>
+        <div class="category-card" data-category="robots_mixeurs">
+          <div class="category-emoji">🥣</div>
+          <div>
+            <div class="category-name">Robots & Mixeurs</div>
+            <div class="category-sub">Pétrins & Hachoirs</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Section Produits Populaires -->
+  <section id="produits" class="products-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <h2 class="section-title">NOS <span>PRODUITS POPULAIRES</span></h2>
+        <p class="section-desc">Sélection officielle garantie 12 mois • Livraison 58 Wilayas</p>
+      </div>
+
+      <!-- Filter Chips -->
+      <div class="filter-chips-row">
+        <button class="filter-chip active" data-category="all">Tous les produits</button>
+        <button class="filter-chip" data-category="cuisinieres">🍳 Cuisinières</button>
+        <button class="filter-chip" data-category="refrigerateurs">🧊 Réfrigérateurs</button>
+        <button class="filter-chip" data-category="petit_electro">☕ Petit électroménager</button>
+        <button class="filter-chip" data-category="robots_mixeurs">🥣 Robots & Mixeurs</button>
+      </div>
+
+      <!-- Info Résultats / Filtres actifs -->
+      <div id="resultsInfoBar" class="results-info-bar" style="display: none;">
+        <span id="resultsCountText">0 produit(s)</span>
+        <button id="btnResetFilters" class="btn-reset-filters">↺ Réinitialiser les filtres</button>
+      </div>
+
+      <!-- Grille des Produits (1 colonne sur mobile) -->
+      <div id="productsGrid" class="products-grid">
+        <!-- Rendu dynamique via app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Section Contact -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="contact-card">
+        <div class="contact-icon-bubble">💬</div>
+        <h2 class="contact-title">Une question ?</h2>
+        <p class="contact-subtitle">« Contactez-nous directement sur WhatsApp pour demander le prix ou commander. »</p>
+        
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+          <a id="btnContactWhatsApp" href="#" target="_blank" rel="noopener noreferrer" class="btn-contact-whatsapp">
+            <img src="images/whatsapp.svg" alt="" style="width: 22px; height: 22px;">
+            <span>CONTACTER ROKA ELECTRO</span>
+          </a>
+          <a href="tel:0791708328" class="btn-contact-phone">
+            <span>📞</span> <span>Appeler : 0791708328</span>
+          </a>
+        </div>
+
+        <div class="contact-assurances-row">
+          <div class="contact-pill">📦 58 Wilayas</div>
+          <div class="contact-pill">🛡️ Garantie 12M</div>
+          <div class="contact-pill">⚡ Réponse rapide</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Footer Bleu Foncé -->
+  <footer class="footer-dark">
+    <div class="container">
+      <div class="footer-logo">
+        <span style="color: #F21878;">ROKA</span> <span style="color: #60A5FA;">ELECTRO</span>
+      </div>
+      <p class="footer-sub">Votre magasin d'électroménager de référence en Algérie</p>
+      
+      <div class="footer-features">
+        <span>🚚 58 Wilayas</span>
+        <span>🛡️ Garantie 12 Mois</span>
+        <span>📞 0791708328</span>
+      </div>
+
+      <hr class="footer-divider">
+
+      <p class="footer-copyright">© 2026 Roka Electro — Commandes WhatsApp : 0791708328</p>
+      <p class="footer-legal">Paiement sécurisé à la livraison • Service après-vente dédié</p>
+    </div>
+  </footer>
+
+  <!-- 9. Bouton WhatsApp Flottant -->
+  <a id="floatingWhatsAppBtn" href="#" target="_blank" rel="noopener noreferrer" class="floating-whatsapp-btn" title="Discuter sur WhatsApp">
+    <img src="images/whatsapp.svg" alt="WhatsApp">
+    <span>WhatsApp</span>
+  </a>
+
+  <!-- MODAL: Fiche Produit Détaillée -->
+  <div id="productModal" class="modal-overlay" onclick="closeProductModal()">
+    <div class="modal-card" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <span id="modalBrand" class="brand-badge" style="position: static;">MARQUE</span>
+        <button class="modal-close-btn" onclick="closeProductModal()">✕</button>
+      </div>
+      <img id="modalImage" class="modal-product-img" src="" alt="Produit">
+      <div id="modalCategory" style="color: #F21878; font-size: 11px; font-weight: 800; letter-spacing: 0.5px;">CATÉGORIE</div>
+      <h3 id="modalName" style="font-size: 18px; font-weight: 900; margin: 4px 0 10px 0; color: #0F172A;">Nom du produit</h3>
+      <div style="margin-bottom: 12px;">
+        <span id="modalPrice" class="price-pill" style="font-size: 14px;">Prix sur demande</span>
+      </div>
+      
+      <p id="modalDescription" style="font-size: 13px; color: #475569; line-height: 1.5; margin-bottom: 16px;"></p>
+      
+      <div style="font-size: 13px; font-weight: 700; color: #103C91; margin-bottom: 8px;">Caractéristiques principales :</div>
+      <ul id="modalSpecs" style="list-style: none; padding: 0; margin-bottom: 20px;"></ul>
+      
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <a id="modalOrderBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-order" style="height: 50px; font-size: 14px;">
+          <img src="images/whatsapp.svg" alt="" style="width: 22px; height: 22px;">
+          <span>Commander sur WhatsApp</span>
+        </a>
+        <a href="tel:0791708328" style="text-align: center; font-size: 13px; font-weight: 700; color: #103C91; text-decoration: none; padding: 10px;">
+          📞 Appeler directement : 0791708328
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Estimation Livraison 58 Wilayas -->
+  <div id="wilayasModal" class="modal-overlay" onclick="closeWilayasModal()">
+    <div class="modal-card" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h3 style="font-size: 16px; font-weight: 800; color: #103C91; display: flex; align-items: center; gap: 8px;">
+          <span>🚚</span> <span>Livraison 58 Wilayas</span>
+        </h3>
+        <button class="modal-close-btn" onclick="closeWilayasModal()">✕</button>
+      </div>
+      <p style="font-size: 12px; color: #64748B; margin-bottom: 12px;">
+        Expédition rapide avec paiement à la livraison dans toute l'Algérie.
+      </p>
+      <input type="text" placeholder="Rechercher votre wilaya..." oninput="filterWilayas(this.value)" class="search-input" style="margin-bottom: 12px;">
+      <div id="wilayasList" style="max-height: 280px; overflow-y: auto;"></div>
+    </div>
+  </div>
+
+  <!-- MODAL: Réglages Supabase -->
+  <div id="supabaseModal" class="modal-overlay" onclick="closeSupabaseModal()">
+    <div class="modal-card" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h3 style="font-size: 16px; font-weight: 800; color: #103C91;">⚙️ Configuration Supabase</h3>
+        <button class="modal-close-btn" onclick="closeSupabaseModal()">✕</button>
+      </div>
+      <p style="font-size: 12px; color: #64748B; margin-bottom: 14px;">
+        Connectez votre base de données Supabase pour charger dynamiquement les produits et enregistrer les commandes.
+      </p>
+      
+      <div style="margin-bottom: 12px;">
+        <label style="font-size: 11px; font-weight: 700; color: #103C91; display: block; margin-bottom: 4px;">SUPABASE URL :</label>
+        <input type="text" id="supabaseUrlInput" placeholder="https://xyzcompany.supabase.co" class="search-input">
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <label style="font-size: 11px; font-weight: 700; color: #103C91; display: block; margin-bottom: 4px;">SUPABASE ANON KEY :</label>
+        <input type="password" id="supabaseKeyInput" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." class="search-input">
+      </div>
+
+      <div style="display: flex; gap: 10px;">
+        <button onclick="saveSupabaseSettings()" style="flex: 1; height: 44px; background: #103C91; color: white; border: none; border-radius: 8px; font-weight: 700; font-size: 13px; cursor: pointer;">
+          Enregistrer & Synchroniser
+        </button>
+      </div>
+      <p style="font-size: 11px; color: #94A3B8; margin-top: 10px; text-align: center;">
+        Consultez <code>schema.sql</code> pour créer les tables en un clic.
+      </p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="supabase.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

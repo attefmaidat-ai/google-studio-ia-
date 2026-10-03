@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+    <path
+        android:fillColor="#F1F5F9"
+        android:pathData="M100,10 A90,90 0 1,0 100,190 A90,90 0 1,0 100,10 Z" />
+    <!-- Airfryer Body -->
+    <path
+        android:fillColor="#1E293B"
+        android:pathData="M65,45 C65,35 135,35 135,45 L145,155 C145,165 135,170 100,170 C65,170 55,165 55,155 Z" />
+    <!-- Digital Screen -->
+    <path
+        android:fillColor="#0F172A"
+        android:strokeColor="#334155"
+        android:strokeWidth="1.5"
+        android:pathData="M72,50 L128,50 L126,80 L74,80 Z" />
+    <path
+        android:fillColor="#F21878"
+        android:pathData="M95,62 A3,3 0 1,0 95,68 A3,3 0 1,0 95,62 Z" />
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M105,62 A3,3 0 1,0 105,68 A3,3 0 1,0 105,62 Z" />
+    <!-- Basket line -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#475569"
+        android:strokeWidth="2"
+        android:pathData="M60,95 L140,95" />
+    <!-- Handle -->
+    <path
+        android:fillColor="#334155"
+        android:strokeColor="#103C91"
+        android:strokeWidth="1"
+        android:pathData="M92,105 L108,105 L106,145 L94,145 Z" />
+</vector>

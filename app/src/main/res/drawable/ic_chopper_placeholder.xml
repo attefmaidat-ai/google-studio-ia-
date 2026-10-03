@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+    <!-- Background circle -->
+    <path
+        android:fillColor="#F1F5F9"
+        android:pathData="M100,10 A90,90 0 1,0 100,190 A90,90 0 1,0 100,10 Z" />
+    <!-- Motor body top -->
+    <path
+        android:fillColor="#103C91"
+        android:pathData="M75,35 L125,35 A10,10 0 0,1 135,45 L130,85 L70,85 L65,45 A10,10 0 0,1 75,35 Z" />
+    <!-- Pink button on top -->
+    <path
+        android:fillColor="#F21878"
+        android:pathData="M90,25 L110,25 A5,5 0 0,1 115,30 L115,35 L85,35 L85,30 A5,5 0 0,1 90,25 Z" />
+    <!-- Glass bowl -->
+    <path
+        android:fillColor="#E2E8F0"
+        android:strokeColor="#94A3B8"
+        android:strokeWidth="3"
+        android:pathData="M60,88 L140,88 L130,165 A15,15 0 0,1 115,175 L85,175 A15,15 0 0,1 70,165 Z" />
+    <!-- Stainless steel blades -->
+    <path
+        android:fillColor="#64748B"
+        android:pathData="M97,95 L103,95 L103,165 L97,165 Z" />
+    <path
+        android:fillColor="#475569"
+        android:pathData="M90,120 L125,115 L120,125 Z" />
+    <path
+        android:fillColor="#475569"
+        android:pathData="M110,145 L75,140 L80,150 Z" />
+    <!-- Handle -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#94A3B8"
+        android:strokeWidth="4"
+        android:pathData="M138,105 C150,110 150,135 133,145" />
+</vector>

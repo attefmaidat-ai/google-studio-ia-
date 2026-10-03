@@ -1,0 +1,14 @@
+{
+  "name": "roka-electro-web",
+  "version": "1.0.0",
+  "description": "Site e-commerce officiel ROKA ELECTRO Algérie",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve ."
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0"
+  },
+  "keywords": ["ecommerce", "algerie", "electromenager", "roka-electro", "supabase", "vercel"]
+}
